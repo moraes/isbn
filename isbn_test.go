@@ -61,7 +61,7 @@ func TestISBN(t *testing.T) {
 		if v.valid {
 			d10, err := CheckDigit10(v.isbn10)
 			if err != nil || d10 != v.isbn10[len(v.isbn10)-1:] {
-				t.Errorf("CheckDigit10: failed to calculate check digit for %s: got %s, expected %s (error: %v) %d", v.isbn10, d10, v.isbn10[len(v.isbn10)-1:], err)
+				t.Errorf("CheckDigit10: failed to calculate check digit for %s: got %s, expected %s (error: %v)", v.isbn10, d10, v.isbn10[len(v.isbn10)-1:], err)
 			}
 			d13, err := CheckDigit13(v.isbn13)
 			if err != nil || d13 != v.isbn13[len(v.isbn13)-1:] {
